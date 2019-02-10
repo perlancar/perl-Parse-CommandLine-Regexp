@@ -57,3 +57,39 @@ sub parse_command_line {
 }
 
 1;
+# ABSTRACT: Parsing string like command line
+
+=head1 DESCRIPTION
+
+This module is an alternative to L<Parse::CommandLine>, using regexp instead of
+per-character parsing technique employed by Parse::CommandLine, and which might
+offer better performance in Perl (see benchmarks in
+L<Bencher::Scenario::CmdLineParsingModules>).
+
+L</"parse_command_line">, the main routine, basically split a string into
+"words", with whitespaces as delimiters while also taking into account quoting
+using C<"> (double-quote character) and C<'> (single-quote character) as well as
+escaping using C<\> (backslash character). This splitting is similar to, albeit
+simpler than, what a shell like bash does to its command-line string.
+
+
+=head1 FUNCTIONS
+
+=head2 parse_command_line
+
+Usage:
+
+ my @words = parse_command_line($str);
+
+
+=head1 SEE ALSO
+
+L<Parse::CommandLine>
+
+L<Text::ParseWords>, which allows you to specify what characters to use as
+delimiters.
+
+C<parse_cmdline> in L<Complete::Bash>, which also takes into account
+non-whitespace word-breaking character such as C<|>.
+
+L<Text::CSV> and friends
