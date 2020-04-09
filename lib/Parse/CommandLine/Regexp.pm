@@ -1,6 +1,8 @@
 package Parse::CommandLine::Regexp;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use strict;
@@ -86,10 +88,11 @@ Usage:
 
 L<Parse::CommandLine>
 
-L<Text::ParseWords>, which allows you to specify what characters to use as
-delimiters.
+L<Text::ParseWords>'s C<shellwords()>. This module also allows you to specify
+which quoting characters to use.
 
-C<parse_cmdline> in L<Complete::Bash>, which also takes into account
-non-whitespace word-breaking character such as C<|>.
+C<parse_cmdline> in L<Complete::Bash>, which uses similar technique as this
+module, but also takes into account non-whitespace word-breaking character such
+as C<|>.
 
-L<Text::CSV> and friends
+L<Text::CSV> and friends.
